@@ -1,9 +1,17 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            label: 'docker-agent-alpine'
+        }
+    }
+
+    // triggers {
+    //     pollSCM('*/5 * * * *')
+    // }
 
     environment {
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
-        DOCKER_IMAGE = 'noobcoder1209/project_1'
+        DOCKER_IMAGE = 'gvasov/test_project'
     }
 
     stages {
