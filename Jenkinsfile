@@ -1,6 +1,5 @@
 pipeline {
-    agent { label 'docker-agent-alpine' }
-    }
+    agent { label 'docker-agent-alpine' }    
 
     // triggers {
     //     pollSCM('*/5 * * * *')
@@ -12,14 +11,14 @@ pipeline {
     }
 
     stages {
-        // stage('Initialize'){
-        //     steps {
-        //         script {
-        //             def dockerHome = tool 'myDocker'
-        //             env.PATH = "${dockerHome}/bin:${env.PATH}"
-        //         }
-        //     }
-        // }
+        stage('Initialize'){
+            steps {
+                script {
+                    def dockerHome = tool 'myDocker'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                }
+            }
+        }
         
         stage('Check Docker') {
             steps {
