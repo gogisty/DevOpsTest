@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'docker-agent-alpine' }    
+    agent { dockerfile true }   
 
     // triggers {
     //     pollSCM('*/5 * * * *')
