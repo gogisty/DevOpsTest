@@ -1,6 +1,6 @@
 pipeline {
-    agent { dockerfile true }   
-
+    agent any
+    
     // triggers {
     //     pollSCM('*/5 * * * *')
     // }
@@ -11,14 +11,14 @@ pipeline {
     }
 
     stages {
-        // stage('Initialize'){
-        //     steps {
-        //         script {
-        //             def dockerHome = tool 'myDocker'
-        //             env.PATH = "${dockerHome}/bin:${env.PATH}"
-        //         }
-        //     }
-        // }
+        stage('Initialize'){
+            steps {
+                script {
+                    def dockerHome = tool 'myDocker'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                }
+            }
+        }
         
         stage('Check Docker') {
             steps {
