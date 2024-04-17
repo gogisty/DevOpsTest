@@ -15,21 +15,7 @@ pipeline {
                 }
             }
         }
-        
-        stage('Check Docker') {
-            steps {
-                script {
-                    // Check if Docker is running
-                    docker.info()
-
-                    // Check Docker version
-                    docker.version()
-
-                    // Check DOCKER_HOST environment variable
-                    echo "DOCKER_HOST: ${env.DOCKER_HOST}"
-                }
-            }
-        }        
+                      
 
         stage('Checkout') {
             steps {
