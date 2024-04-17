@@ -31,10 +31,14 @@ pipeline {
             }
         }        
 
-        stage('Build Docker Image') {
+        stage('Checkout') {
             steps {
                 git 'https://github.com/gogisty/DevOpsTest.git'
+            }
+        }    
 
+        stage('Build Docker Image') {
+            steps {
                 script {
                     // Build the Docker image
                     docker.build(DOCKER_IMAGE)
