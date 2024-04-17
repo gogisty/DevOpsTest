@@ -5,14 +5,11 @@
 	"image": "mcr.microsoft.com/devcontainers/python",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt"
+	"postCreateCommand": "pip3 install --user -r requirements.txt",
 
-	//"features": {
-		//"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		//"ghcr.io/devcontainers/features/python:1": {},
-		//"ghcr.io/schlich/devcontainer-features/jenkins-x:1": {},
-		//"ghcr.io/audacioustux/devcontainers/k9s:1": {}
-	//},
+	"features": {
+		"ghcr.io/devcontainers/features/terraform:1": {}
+	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
